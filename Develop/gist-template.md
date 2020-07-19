@@ -1,49 +1,75 @@
-# Title (replace with your title)
+# URL Regex Tutorial
 
-Introductory paragraph (replace this with your text)
+
 
 ## Summary
-
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+This regex is used to find all valid urls in a list of urls.
+```javascript
+/^(https?:\/\/)?([\da-z\.-]+)\.(c{2,6})([\/\w \.-]*)*\/?$/gim
+```
 
 ## Table of Contents
 
 - [Anchors](#anchors)
-- [Quantifiers](#quantifiers)
-- [OR Operator](#or-operator)
 - [Character Classes](#character-classes)
-- [Flags](#flags)
-- [Grouping and Capturing](#grouping-and-capturing)
 - [Bracket Expressions](#bracket-expressions)
-- [Greedy and Lazy Match](#greedy-and-lazy-match)
+- [Quantifiers](#quantifiers)
+- [Flags](#flags)
 - [Boundaries](#boundaries)
-- [Back-references](#back-references)
 - [Look-ahead and Look-behind](#look-ahead-and-look-behind)
 
 ## Regex Components
 
 ### Anchors
 
-### Quantifiers
-
-### OR Operator
+```
+^http   matches any string that starts with http
+html$   matches a string that ends with html
+^http$  exact string match (starts and ends with http)
+http    matches any string that has the text http in it
+```
 
 ### Character Classes
 
-### Flags
-
-### Grouping and Capturing
+```
+\d  matches a single digit 0-9
+\w  matches a word character a-z, A-Z and _
+.   matches any character -> Try it!
+```
 
 ### Bracket Expressions
 
-### Greedy and Lazy Match
+```
+[\da-z\.-] matches a string with one character between 0-9, a-z, . or -
+[\/\w \.-] matches a string with one character \, \w, . and -
+```
+
+### Quantifiers
+
+```
+\w*           matches a string that has ab followed by zero or more word characters
+[\da-z\.-]+   matches a string that has one or more [\da-z\.-] match
+https?        matches a string that has http followed by zero or one s
+http{2}       matches a string that has htt followed by 2 p
+http{2,}      matches a string that has htt followed by 2 or more p
+[a-z\.]{2,6}  matches a string that has any character a-z or .  between 2 up to 5 times
+
+```
+
+### Flags
+
+```
+i   case insensitvity on
+g   global: find all matches
+m   multi-line: $ and ^ match line beginnings and ends
+```
 
 ### Boundaries
-
-### Back-references
-
-### Look-ahead and Look-behind
+```
+\bhttp\b          performs a "whole words only" search for http
+\Bhttp\B          matches only if the pattern is fully surrounded by word characters
+```
 
 ## Author
-
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+[https://github.com/bradleypaul](https://github.com/bradleypaul)
+Full Stack Developer with 5+ years of experience of programming and teaching looking for opportunities using JavaScript and Python. Based primarily in the Austin area but open to remote.
